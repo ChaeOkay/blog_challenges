@@ -41,3 +41,7 @@ li.tags li {
   padding: 0 10px 0 0;
   display: inline-block;
 }
+
+#post_form{
+  padding: 0 0 20px 1px;
+}
