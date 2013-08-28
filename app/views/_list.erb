@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+<li>
+  <ul class='post'>
+      <li class='title'><strong><%= post.title %></strong></li>
+      <li class='description'><p><%= post.body %></p></li>
+      <li class='tags'>
+        <ul>
+        <% post.tags.each do |tag| %>
+          <li>#<%= tag.name %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</li>
+<% end %>

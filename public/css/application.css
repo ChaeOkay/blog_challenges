@@ -2,8 +2,42 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
+
 th {
   text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+td {
+  float: left;
+  margin: 0 8px 0 2px;
+}
+
+.post {
+  padding: 0 0 20px 0;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+}
+
+li.tags li {
+  color: gray;
+  font-style: italic;
+  padding: 0 10px 0 0;
+  display: inline-block;
 }
