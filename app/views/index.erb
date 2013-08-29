@@ -1,3 +1,13 @@
+<div class="errors">
+  <ul>
+  <% if @user && @user.errors.messages.any? %>
+    <% @user.errors.messages.each do |m, v| %>
+      <li><%= v.first %></li>
+    <% end %>
+  <% end %>
+  </ul>
+</div>
+
 <div class='signin'>
   <%= erb :_form_signin %>
 </div>

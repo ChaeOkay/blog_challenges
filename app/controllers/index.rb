@@ -3,7 +3,7 @@ get '/' do
 end
 
 post '/login' do
-  @user = User.find_by_username(params[:username])
+  @user = User.find_by_username(params[:username]) || User.new
   authenticate(@user)
 end
 

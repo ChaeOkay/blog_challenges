@@ -19,15 +19,25 @@ helpers do
   end
 
   def authenticate(user)
-    if user.nil?
-      user.log_username_error
-      redirect '/login'
-    elsif user.password != params[:password]
-      user.log_password_error
-      redirect '/login'
-    else
+    check_username(user)
+    check_password(user)
+    check_errors(user)
+  end
+
+  def check_username(user)
+    user.log_username_error if user.username.nil?
+  end
+
+  def check_password(user)
+    user.log_password_error if user.password != params[:password]
+  end
+
+  def check_errors(user)
+    if user.errors.messages.empty?
       session[:user_id] = user.id
-      redirect '/'
+      redirect '/posts'
+    else
+      erb :index
     end
   end
 
