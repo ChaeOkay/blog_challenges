@@ -12,7 +12,8 @@ post '/post/new' do
 end
 
 get '/post/:id' do
-  @posts = Post.where(id: params[:id])
+  @post = Post.find(params[:id])
+  @tags = @post.tags.map {|t| t.name}.join(", ")
   erb :post
 end
 

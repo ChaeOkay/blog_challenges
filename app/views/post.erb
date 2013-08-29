@@ -3,6 +3,14 @@
  </ul>
 
 <ul class='modify'>
-  <li><a href=' '>Edit</a></li>
-  <li><a href=' '>Delete</a></li>
+  <li><a id='click_edit' href=' '>Edit</a></li>
+  <li><a id='click_delete' href=' '>Delete</a></li>
 </ul>
+
+<div id='edit_form'>
+  <%= erb :_form_edit %>
+</div>
+
+<div id='delete_form'>
+  <%= erb :_form_delete %>
+</div>
