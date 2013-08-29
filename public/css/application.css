@@ -46,6 +46,10 @@ li.tags li {
   padding: 0 0 20px 1px;
 }
 
+#edit_form {
+  display: none;
+}
+
 .modify {
   margin: 0;
 }

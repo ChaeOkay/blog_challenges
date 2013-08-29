@@ -6,10 +6,10 @@ end
 # get 'post/new' do
 # end
 
-post 'post/new' do
+post '/post/new' do
+  blog_post = Post.create(title: params[:title], body: params[:body])
+  create_tags(params[:tags], blog_post)
 end
-
-require 'pry'
 
 get '/post/:id' do
   @posts = Post.where(id: params[:id])
