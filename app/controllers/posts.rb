@@ -23,6 +23,7 @@ end
 put '/post/:id' do
   post = Post.find_by_id(params[:id])
   post.update_attributes(title: params[:title], body: params[:body])
+  redirect '/post/#{params[:id]}'
 end
 
 delete '/post/:id' do

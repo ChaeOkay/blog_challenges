@@ -11,9 +11,24 @@ $(document).ready(function() {
     });
   });
 
-  $('#click_edit').on('click', function(e){
+  $('#click_edit').on('click',  function(e){
     e.preventDefault();
     $('#edit_form').show();
-  })
+
+    $('#edit').on('submit', function(e){
+      e.preventDefault();
+      var $form_data = $('this').serialize();
+
+      //receiving a 404 error here on submit
+
+      $.ajax({
+        type: this.method,
+        url: this.action,
+        data: $form_data
+      }).done(function(response){
+        console.log(response);
+      });
+    });
+  });
 
 });
