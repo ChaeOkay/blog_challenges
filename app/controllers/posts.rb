@@ -16,11 +16,14 @@ get '/post/:id' do
   erb :post
 end
 
-get '/post/:id/edit' do
-end
+# get '/post/:id/edit' do
+# end
 
 put '/post/:id' do
+  post = Post.find_by_id(params[:id])
+  post.update_attributes(title: params[:title], body: params[:body])
 end
 
 delete '/post/:id' do
+  Post.find_by_id(params[:id]).destroy
 end
