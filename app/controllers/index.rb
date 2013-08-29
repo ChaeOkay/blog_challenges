@@ -4,11 +4,7 @@ end
 
 post '/login' do
   @user = User.find_by_username(params[:username])
-  if @user.password != params[:password]
-    redirect '/'
-  else
-    redirect '/posts'
-  end
+  authenticate(@user)
 end
 
 post '/signup' do
