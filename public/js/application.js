@@ -11,6 +11,7 @@ $(document).ready(function() {
     });
   });
 
+
   $('#click_edit').on('click',  function(e){
     e.preventDefault();
     $('#edit_form').show();
