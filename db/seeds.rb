@@ -1,6 +1,6 @@
 
 
-tag1 = Tag.create(name: "Confed of Dunces")
+tag1 = Tag.create(name: "ConfedofDunces")
 
 i = 1
 3.times do
@@ -9,8 +9,8 @@ i = 1
   i += 1
 end
 
-tag2 = Tag.create(name: "Nine Stories")
-tag3 = Tag.create(name: "For Esme...")
+tag2 = Tag.create(name: "9Stories")
+tag3 = Tag.create(name: "ForEsme")
 
 5.times do
    post = Post.create(title: "Post Title #{i}", body: "He said I was unequipped to meet life because I had no sense of humor. #{i}")
