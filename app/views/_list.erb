@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 <li>
   <ul class='post'>
-      <li class='title'><strong><%= post.title %></strong></li>
+      <li class='title'><strong><a href='/post/<%= post.id%>'><%= post.title %><a/></strong></li>
       <li class='description'><p><%= post.body %></p></li>
       <li class='tags'>
         <ul>

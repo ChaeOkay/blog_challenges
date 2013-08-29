@@ -3,20 +3,24 @@ get '/posts' do
   erb :index
 end
 
-get 'post/new' do
-end
+# get 'post/new' do
+# end
 
 post 'post/new' do
 end
 
-get 'post/:id' do
+require 'pry'
+
+get '/post/:id' do
+  @posts = Post.where(id: params[:id])
+  erb :post
 end
 
-get 'post/:id/edit' do
+get '/post/:id/edit' do
 end
 
-put 'post/:id' do
+put '/post/:id' do
 end
 
-delete 'post/:id' do
+delete '/post/:id' do
 end
