@@ -9,6 +9,7 @@ end
 post '/login' do
   @user = User.find_by_username(params[:username]) || User.new
   @user.authenticate(params[:password])
+  #defining @user => put in model
 
   if @user.errors?
     erb :index
@@ -19,6 +20,7 @@ post '/login' do
 end
 
 post '/signup' do
+  #nested params
   @user = User.new(email: params[:email],
                           username: params[:username],
                           password: params[:password])

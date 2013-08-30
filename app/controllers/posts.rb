@@ -7,7 +7,7 @@ end
 # end
 
 post '/post/new' do
-  blog_post = Post.create(title: params[:title], body: params[:body])
+  blog_post = Post.create(params[:post])
   create_tags(params[:tags], blog_post)
 end
 

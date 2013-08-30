@@ -36,7 +36,7 @@ p {
 }
 
 h1 {
-  width: 325px;
+  display: inline-block;
   float:left;
   height: 50px;
   margin: 0;

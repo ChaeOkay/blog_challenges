@@ -35,9 +35,11 @@ class User < ActiveRecord::Base
     self.log_password_error if self.password != (password)
   end
 
+
 # Signup
   def authenticate_new_user(params)
-    self.check_existing_name
+    self.check_existing_name #covered in AR uniqueness
+    #password confirmation is more of a user-helper  - front ened JS
     self.check_password_confirmation(params[:password_confirmation])
   end
 
