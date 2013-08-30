@@ -7,24 +7,18 @@ get '/' do
 end
 
 post '/login' do
+  session.clear
   @user = User.find_by_username(params[:username]) || User.new
-  @user.authenticate(params[:password])
-  #defining @user => put in model
+  User.authenticate(@user, params[:password])
 
-  if @user.errors?
-    erb :index
-  else
-    session[:user_id] = @user.id
-    redirect '/posts'
-  end
+  (session[:user_id] = @user.id) unless @user.id.nil?
+  @user.errors? ? (erb :index) : (redirect '/posts')
 end
 
 post '/signup' do
   #nested params
-  @user = User.new(email: params[:email],
-                          username: params[:username],
-                          password: params[:password])
-  @user.authenticate_new_user(params)
+  @user = User.new(params[:signup])
+  @user.authenticate_new_user(params[:signup])
 
   if @user.errors?
     erb :index

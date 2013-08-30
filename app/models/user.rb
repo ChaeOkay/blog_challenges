@@ -22,17 +22,16 @@ class User < ActiveRecord::Base
 
 
  # Login
-  def authenticate(with_password)
-    self.check_username
-    self.check_password(with_password)
+  def self.authenticate(user, given_password)
+    user.check_password(given_password) unless user.invalid_username?
   end
 
-  def check_username
-    self.log_username_error if self.username.nil?
+  def invalid_username?
+    log_username_error if User.find_by_username(self.username).nil?
   end
 
   def check_password(password)
-    self.log_password_error if self.password != (password)
+    self.log_password_error if self.password != password
   end
 
 
