@@ -1,9 +1,6 @@
 get '/' do
-  if current_user && logged_in?
-    redirect '/posts'
-  else
-    erb :index
-  end
+  redirect '/posts' if  logged_in?
+  erb :index
 end
 
 post '/login' do
