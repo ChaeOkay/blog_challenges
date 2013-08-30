@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :posts
   validates_uniqueness_of :username, :message => "Username is already taken."
+  validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/,
+        :message => "Please enter a valid email address." }
 
   # Errors
   def errors?
