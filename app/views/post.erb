@@ -2,15 +2,17 @@
     <%= erb :_list %>
  </ul>
 
-<ul class='modify'>
-  <li><a id='click_edit' href=' '>Edit</a></li>
-  <li><a id='click_delete' href=' '>Delete</a></li>
-</ul>
+<% if logged_in? %>
+  <ul class='modify'>
+    <li><a id='click_edit' href=' '>Edit</a></li>
+    <li><a id='click_delete' href=' '>Delete</a></li>
+  </ul>
 
-<div id='edit_form'>
-  <%= erb :_form_edit %>
-</div>
+  <div id='edit_form'>
+    <%= erb :_form_edit %>
+  </div>
 
-<div id='delete_form'>
-  <%= erb :_form_delete %>
-</div>
+  <div id='delete_form'>
+    <%= erb :_form_delete %>
+  </div>
+<% end %>
