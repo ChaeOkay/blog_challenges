@@ -19,13 +19,16 @@ end
 
 # get '/post/:id/edit' do
 # end
+require 'pry'
 
 put '/post/:id' do
+  binding.pry
   post = Post.find_by_id(params[:id])
-  post.update_attributes(title: params[:title], body: params[:body])
-  redirect '/post/#{params[:id]}'
+  post.update_attributes(params[:edit])
+  redirect '/posts'
 end
 
 delete '/post/:id' do
   Post.find_by_id(params[:id]).destroy
+  redirect '/posts'
 end
