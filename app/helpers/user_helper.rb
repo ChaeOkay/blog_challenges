@@ -10,4 +10,9 @@ helpers do
     !current_user.nil?
   end
 
+  def start_session(user)
+    (session[:user_id] = user.id) unless (user.id.nil? || user.errors?)
+    user.errors? ? (erb :index) : (redirect '/posts')
+  end
+
 end
