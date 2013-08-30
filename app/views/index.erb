@@ -1,6 +1,6 @@
 <div class="errors">
   <ul>
-  <% if @user && @user.errors.messages.any? %>
+  <% if @user && @user.errors? %>
     <% @user.errors.messages.each do |m, v| %>
       <li><%= v.first %></li>
     <% end %>

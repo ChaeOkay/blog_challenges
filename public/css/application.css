@@ -4,6 +4,10 @@
   padding: 0px 20px 20px 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
 th {
   text-align: left;
 }
@@ -25,6 +29,29 @@ p {
 
 .errors {
   color: red;
+}
+
+.topbar {
+  height: 60px;
+}
+
+h1 {
+  width: 325px;
+  float:left;
+  height: 50px;
+  margin: 0;
+}
+
+ul.nav {
+  float: right;
+  height: 50px;
+  margin: 0;
+  padding-top: 16px;
+}
+
+ul.nav li {
+  display: inline-block;
+  margin-left: 20px;
 }
 
 /* Lists and forms*/
