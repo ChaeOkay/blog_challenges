@@ -21,22 +21,9 @@
   <div class='container'>
     <div class='topbar'>
       <% if current_user && logged_in? %>
-          <h1>
-            <a href='/posts'>
-                <%= @current_user.username.capitalize! %>'s Blog
-            </a>
-          </h1>
-
-          <ul class='nav'>
-            <li><a href=''>My Posts</a></li><li><a href=''>All Posts</a></li><li><a href=''>Sign Out</a></li>
-          </ul>
-
+          <%= erb :_nav_session %>
       <% else %>
-        <h1>
-            <a href='/posts'>
-                Blog
-            </a>
-          </h1>
+        <%= erb :_nav %>
       <% end %>
     </div>
 
