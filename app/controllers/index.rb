@@ -14,3 +14,8 @@ post '/signup' do
   @user = User.create(params[:signup])
   start_session(@user)
 end
+
+get '/signout' do
+  session.clear
+  redirect '/'
+end
